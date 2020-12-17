@@ -1,34 +1,18 @@
 #!/usr/bin/env python3
 
-import argparse
-import sys
+import unittest
 
 
-def get_args():
-    parser = argparse.ArgumentParser(description="")
-    #parser.add_argument(help="")
-    args = parser.parse_args()
-    return args
+class TestCase(unittest.TestCase):
+    def test_imports(self):
+        import cv2
+        print("test_imports:  OpenCV  {}".format(cv2.__version__))
 
-
-def main():
-    args = get_args()
-
-    print("===== main.py =====")
-
-    import cv2
-    print("OpenCV  {}".format(cv2.__version__))
-
-    import numpy as np
-    print("NumPy   {}".format(np.__version__))
-    
-    print("===================")
+        import numpy as np
+        print("test_imports:  NumPy   {}".format(np.__version__))
+        
+        self.assertTrue(True)
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print("ERROR: {} ({})".format(e, type(e).__name__))
-        sys.exit(1)
-
+    unittest.main()
