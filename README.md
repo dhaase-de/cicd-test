@@ -1,5 +1,5 @@
-`travis-test`
-=============
+`cicd-test`
+===========
 
 Repository to test Travis CI configurations.
 
