@@ -18,6 +18,9 @@ jobs:
         exclude:
           - numpy-version: '==1.13.3'
             python-version: '3.9'
+        include:
+          - os: ubuntu-16.04
+            python-version: '3.5' 
     
     runs-on: ${{ matrix.os }}
     
